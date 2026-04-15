@@ -1,0 +1,629 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Trabalho Web3
+meta:
+  id: wrk_5568fd0f410b410aaafa304ec4648a0f
+  created: 1775763643630
+  modified: 1775763643630
+  description: ""
+collection:
+  - name: Usuário
+    meta:
+      id: fld_1b547b666c064d4d985d6b6be444bf6f
+      created: 1775838117251
+      modified: 1776104939070
+      sortKey: -1775838117251
+      description: ""
+    children:
+      - url: http://localhost:3000/usuario
+        name: Listar todos usuários
+        meta:
+          id: req_a4fa4e4ca5fd476bba0a167a318726ed
+          created: 1775838119824
+          modified: 1775838429971
+          isPrivate: false
+          description: ""
+          sortKey: -1775838119824
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/usuario/de462537-e92a-4087-a75a-88c03948d9a9
+        name: Lista by Id
+        meta:
+          id: req_4ea2258f1334472fb1c9e31422a1fa16
+          created: 1775838438268
+          modified: 1775839001395
+          isPrivate: false
+          description: ""
+          sortKey: -1775838448595
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/usuario
+        name: Criar Usuario
+        meta:
+          id: req_dd190dd456de4e37890a2dc4d2c866c2
+          created: 1775838458922
+          modified: 1775838949817
+          isPrivate: false
+          description: ""
+          sortKey: -1775838458922
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "teste",
+            	"email": "teste@gmail.com",
+            	"tipoAcesso": "ADMIN"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/usuario/
+        name: Deleta usuario
+        meta:
+          id: req_00fb0287dcb048348935c86e9aeb3b8b
+          created: 1775838682440
+          modified: 1775838905889
+          isPrivate: false
+          description: ""
+          sortKey: -1775838682440
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/usuario/de462537-e92a-4087-a75a-88c03948d9a9
+        name: Atualiza Usuario
+        meta:
+          id: req_eb29573c76d14dc9b8d90358b4254f85
+          created: 1775838914863
+          modified: 1775839019450
+          isPrivate: false
+          description: ""
+          sortKey: -1775838914863
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"id": "de462537-e92a-4087-a75a-88c03948d9a9",
+            	"nome": "atualizado"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Curso
+    meta:
+      id: fld_92caf4b75f8c4f739ff951739e85f617
+      created: 1775841288194
+      modified: 1775841288194
+      sortKey: -1767892309406
+      description: ""
+    children:
+      - url: http://localhost:3000/curso
+        name: "Listar todos "
+        meta:
+          id: req_28fbb02ba0b84b73aca6345266647a6a
+          created: 1775841288195
+          modified: 1775841346034
+          isPrivate: false
+          description: ""
+          sortKey: -1775838119824
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/curso
+        name: Criar Curso
+        meta:
+          id: req_a46b670e93cd46b3bc8f5c6b5a6a5f32
+          created: 1775841288196
+          modified: 1775841408786
+          isPrivate: false
+          description: ""
+          sortKey: -1775838458922
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"titulo": "teste",
+            	"descricao": "testando rotas",
+            	"cargaHoraria": 10
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/curso/0b8b37bb-2819-4a32-b6e8-0c7941bf3b62
+        name: Lista by Id
+        meta:
+          id: req_a69123eabc10411f84a88e9c7d5b2c5a
+          created: 1775841288196
+          modified: 1775841422270
+          isPrivate: false
+          description: ""
+          sortKey: -1775838448595
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/curso/0b8b37bb-2819-4a32-b6e8-0c7941bf3b62
+        name: Atualiza Curso
+        meta:
+          id: req_c027741cf37148629d5138d945de5c14
+          created: 1775841288197
+          modified: 1775841440257
+          isPrivate: false
+          description: ""
+          sortKey: -1775838914863
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"titulo": "atualizado"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/curso/0b8b37bb-2819-4a32-b6e8-0c7941bf3b62
+        name: Deleta Curso
+        meta:
+          id: req_dea8317b4b304333971d8d073f2e8797
+          created: 1775841288197
+          modified: 1775841468988
+          isPrivate: false
+          description: ""
+          sortKey: -1775838682440
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Categoria
+    meta:
+      id: fld_f0615aecd984489890d5ad267c6716c2
+      created: 1776096843573
+      modified: 1776096843573
+      sortKey: -1763919405483.5
+      description: ""
+    children:
+      - url: http://localhost:3000/categoria
+        name: "Listar todos "
+        meta:
+          id: req_77faf830e7c040919817574e175a5397
+          created: 1776096843575
+          modified: 1776096915105
+          isPrivate: false
+          description: ""
+          sortKey: -1775838119824
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/categoria/
+        name: Lista by Id
+        meta:
+          id: req_55bf0ade72ac4f4aa44b6c079c90400a
+          created: 1776096843576
+          modified: 1776096908885
+          isPrivate: false
+          description: ""
+          sortKey: -1775838448595
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/categoria
+        name: Criar Categoria
+        meta:
+          id: req_a95f6ceac26248c7beb5ee1ff29173c7
+          created: 1776096843576
+          modified: 1776096893182
+          isPrivate: false
+          description: ""
+          sortKey: -1775838458922
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"titulo": "teste",
+            	"descricao": "testando rotas",
+            	"cargaHoraria": 10
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/categoria/
+        name: Atualiza Categoria
+        meta:
+          id: req_08f6f4c0e6644fdda16f4de03846e5cc
+          created: 1776096843580
+          modified: 1776096874489
+          isPrivate: false
+          description: ""
+          sortKey: -1775838914863
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"titulo": "atualizado"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/categoria/
+        name: Deleta Categoria
+        meta:
+          id: req_69c50349c92347fcb9eb21dd9d616073
+          created: 1776096843581
+          modified: 1776096882952
+          isPrivate: false
+          description: ""
+          sortKey: -1775838682440
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Matricula
+    meta:
+      id: fld_e00f58fd5592470b956e1e66c8a2b9ec
+      created: 1776104929016
+      modified: 1776104929016
+      sortKey: -1771865213328.5
+      description: ""
+    children:
+      - url: http://localhost:3000/usuario
+        name: Listar todos usuários
+        meta:
+          id: req_a057389147794fac9456e165291bb4c0
+          created: 1776104929016
+          modified: 1776104929016
+          isPrivate: false
+          description: ""
+          sortKey: -1775838119824
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/usuario/de462537-e92a-4087-a75a-88c03948d9a9
+        name: Lista by Id
+        meta:
+          id: req_e2a7a256b220405cb690dd94e22ca790
+          created: 1776104929017
+          modified: 1776104929017
+          isPrivate: false
+          description: ""
+          sortKey: -1775838448595
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/usuario/
+        name: Deleta usuario
+        meta:
+          id: req_76c4b9c58a8e4f43a1d2f60faccbc3d8
+          created: 1776104929018
+          modified: 1776104929018
+          isPrivate: false
+          description: ""
+          sortKey: -1775838682440
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/usuario
+        name: Criar Usuario
+        meta:
+          id: req_af400e7731d54989a4accb08c0232fc9
+          created: 1776104929018
+          modified: 1776104929018
+          isPrivate: false
+          description: ""
+          sortKey: -1775838458922
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "teste",
+            	"email": "teste@gmail.com",
+            	"tipoAcesso": "ADMIN"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:3000/usuario/de462537-e92a-4087-a75a-88c03948d9a9
+        name: Atualiza Usuario
+        meta:
+          id: req_fcfd93f5f918406fa9d09826da43d052
+          created: 1776104929019
+          modified: 1776104929019
+          isPrivate: false
+          description: ""
+          sortKey: -1775838914863
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"id": "de462537-e92a-4087-a75a-88c03948d9a9",
+            	"nome": "atualizado"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Login
+    meta:
+      id: fld_75fa3b98cebb48cb95302de50539f840
+      created: 1776280942361
+      modified: 1776280942361
+      sortKey: -1776280942361
+      description: ""
+    children:
+      - url: http://localhost:3000/login
+        name: Login
+        meta:
+          id: req_4dc2b833f8504972a78955a3e6bd16bb
+          created: 1776280945044
+          modified: 1776281083362
+          isPrivate: false
+          description: ""
+          sortKey: -1776280945044
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email": "teste@gmail.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_5bbca6c277492d4ede7c4cb9bdb367186e2ecad1
+    created: 1775763643633
+    modified: 1775763643633
+environments:
+  name: Base Environment
+  meta:
+    id: env_5bbca6c277492d4ede7c4cb9bdb367186e2ecad1
+    created: 1775763643631
+    modified: 1775763643631
+    isPrivate: false
