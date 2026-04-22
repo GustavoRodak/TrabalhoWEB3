@@ -16,10 +16,13 @@ export class AuthService {
         const user = await this.userService.findByEmail(dto.email)
         if (!user) throw new NotFoundException("Credenciais invalidas")
 
-        const IsMacth = await bcrypt.compare(dto.email, user.email)
-        if (!IsMacth) throw new NotFoundException("Credenciais invalidas")
+        const isMatch = await bcrypt.compare(dto.senha, user.senha)
+        if (!isMatch) throw new NotFoundException("Credenciais invalidas")
 
-        const payload = { sub: user.id }
+        const payload = {
+            sub: user.id,
+            tipo: user.tipoAcesso
+        }
         return {
             accessToken: await this.jwtService.signAsync(payload)
         }

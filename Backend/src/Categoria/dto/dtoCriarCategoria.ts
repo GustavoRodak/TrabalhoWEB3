@@ -8,5 +8,6 @@ export class criarCategoriaDto{
 
   @IsString()
   descricao: string;
+  
 
 }

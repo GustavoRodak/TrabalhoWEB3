@@ -6,37 +6,48 @@ import { CriarCursoDto } from "./dto/dtoCriarCurso";
 import { AtualizarCursoDto } from "./dto/dtoAtualizarCurso";
 
 @Injectable()
-export class CursoService{
+export class CursoService {
 
   constructor(
     @InjectRepository(Curso)
     private cursoRepository: Repository<Curso>
-  ) {}
+  ) { }
 
-  async create(dto: CriarCursoDto): Promise<Curso>{
-      const curso = this.cursoRepository.create({...dto});
-      return this.cursoRepository.save(curso);
+  async create(dto: CriarCursoDto): Promise<Curso> {
+    const curso = this.cursoRepository.create({ ...dto });
+    return this.cursoRepository.save(curso);
   }
 
-  async findAll(): Promise<Curso[]>{
+  async findAll(): Promise<Curso[]> {
     return this.cursoRepository.find();
   }
 
-  async findById(idCurso: string): Promise<Curso>{
-    const curso = await this.cursoRepository.findOne({where: {id: idCurso}});
-    if(!curso) throw new NotFoundException("Curso não encontrado");
+  async findById(idCurso: string): Promise<Curso> {
+    const curso = await this.cursoRepository.findOne({ where: { id: idCurso } });
+    if (!curso) throw new NotFoundException("Curso não encontrado");
 
     return curso;
   }
 
-  async update(id: string, atualizarCursoDto: AtualizarCursoDto): Promise<Curso>{
+  async listarAlunos(id: string) {
+    const curso = await this.cursoRepository.findOne({
+      where: { id },
+      relations: ["matriculas", "matriculas.usuario"]
+    });
+
+    if (!curso) throw new NotFoundException("Curso não encontrado");
+
+    return curso.matriculas.map(m => m.usuario);
+  }
+
+  async update(id: string, atualizarCursoDto: AtualizarCursoDto): Promise<Curso> {
     const curso = await this.findById(id);
     Object.assign(curso, atualizarCursoDto);
 
     return this.cursoRepository.save(curso);
   }
 
-  async remove(id: string): Promise<void>{
+  async remove(id: string): Promise<void> {
     const curso = await this.findById(id);
     await this.cursoRepository.remove(curso);
   }

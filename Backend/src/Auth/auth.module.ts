@@ -8,16 +8,16 @@ import { JwtStrategy } from "./jwt.strategy";
 import { UsuarioModule } from "src/Usuario/user.module";
 
 @Module({
-    imports: [
-        UsuarioModule,
-        PassportModule,
-        JwtModule.register({
-            global: true,
-            secret: 'SEGREDO',
-            signOptions: {expiresIn: '10h'}
-        })
-    ],
-    providers: [AuthService, JwtStrategy],
-    controllers: [AuthController]
+  imports: [
+    UsuarioModule,
+    PassportModule.register({ defaultStrategy: 'jwt' }),
+    JwtModule.register({
+      secret: 'SEGREDO',
+      signOptions: { expiresIn: '10h' }
+    }),
+  ],
+  providers: [AuthService, JwtStrategy],
+  controllers: [AuthController],
+  exports: [AuthService]
 })
 export class AuthModule {}

@@ -9,7 +9,7 @@ interface PropsButton {
   type?: "button" | "submit" | "reset";
 }
 
-export const Button = ({ title, width, rota, type, background, text }: PropsButton) => {
+export const Button = ({ title, width, rota, type = "button", background, text }: PropsButton) => {
 
   const navigate = useNavigate();
 
@@ -25,6 +25,7 @@ export const Button = ({ title, width, rota, type, background, text }: PropsButt
       onClick={handleClick}
       style={{width: `${width}rem`, backgroundColor: `${background}`, color: `${text}`}}
       className="h-10 rounded-xl cursor-pointer hover:scale-[1.03] duration-150"
+      
     >
       {title}
     </button>

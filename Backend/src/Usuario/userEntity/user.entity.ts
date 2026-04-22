@@ -3,7 +3,7 @@ import { Matricula } from "src/Matricula/entity/Matricula.entity";
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export class Usuario{
+export class Usuario {
 
   @PrimaryGeneratedColumn("uuid")
   id: string;
@@ -11,8 +11,11 @@ export class Usuario{
   @Column()
   nome: string;
 
-  @Column({unique: true})
+  @Column({ unique: true })
   email: string;
+
+  @Column()
+  senha: string;
 
   @Column()
   tipoAcesso: TipoAcesso;

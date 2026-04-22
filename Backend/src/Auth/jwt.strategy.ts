@@ -4,8 +4,8 @@ import { ExtractJwt, Strategy } from "passport-jwt";
 import { UsuarioService } from "src/Usuario/user.service";
 
 @Injectable()
-export class JwtStrategy extends PassportStrategy(Strategy){
-    constructor(private userService: UsuarioService){
+export class JwtStrategy extends PassportStrategy(Strategy) {
+    constructor(private userService: UsuarioService) {
         super({
             jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
             ignoreExpiration: false,
@@ -13,7 +13,7 @@ export class JwtStrategy extends PassportStrategy(Strategy){
         })
     }
 
-    async validate(payload: any){
-        return { id: payload.sub }
+    async validate(payload: any) {
+        return { id: payload.sub, tipo: payload.tipo }
     }
 }

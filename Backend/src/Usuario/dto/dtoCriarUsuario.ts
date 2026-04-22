@@ -1,7 +1,7 @@
 import { IsNotEmpty, IsString } from "class-validator";
 import { TipoAcesso } from "src/Enum/TipoAcesso";
 
-export class CriarUsuarioDto{
+export class CriarUsuarioDto {
 
   @IsNotEmpty()
   @IsString()
@@ -10,6 +10,9 @@ export class CriarUsuarioDto{
   @IsNotEmpty()
   @IsString()
   email: string;
+
+  @IsNotEmpty()
+  senha: string;
 
   @IsNotEmpty()
   tipo: TipoAcesso;

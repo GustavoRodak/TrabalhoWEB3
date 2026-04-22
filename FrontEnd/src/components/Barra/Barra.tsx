@@ -7,10 +7,10 @@ export default function Barra() {
         <div className="h-full w-full flex justify-center items-center">
           <div className="flex w-full justify-between">
             <div className="flex gap-2">
-              <Button text="white" title="Home" width="10" rota="/home"/>
-              <Button text="white" title="Cursos" width="10" />
-              <Button text="white" title="Meus Cursos" width="10" />
-              <Button text="white" title="Categoria" width="10" />
+              <Button text="white" title="Home" width="10" rota="/inicio"/>
+              <Button text="white" title="Cursos" width="10" rota="/cursos"/>
+              <Button text="white" title="Meus Cursos" width="10" rota="/meuscursos"/>
+              <Button text="white" title="Categoria" width="10" rota="/categoria"/>
             </div>
             <div>
               <Button text="white" title="Perfil" width="5" />
