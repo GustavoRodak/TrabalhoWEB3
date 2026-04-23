@@ -8,6 +8,7 @@ interface Curso {
   titulo: string;
   descricao: string;
   cargaHoraria: number;
+  categoria: {id: string, nome: string};
 }
 
 export default function TelaCursos() {
@@ -43,6 +44,7 @@ export default function TelaCursos() {
             titulo={curso.titulo}
             descricao={curso.descricao}
             cargaHoraria={curso.cargaHoraria}
+            categoria={curso.categoria}
           />
         ))}
       </div>

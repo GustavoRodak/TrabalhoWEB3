@@ -5,9 +5,10 @@ interface CardCurso {
   titulo: string;
   descricao: string;
   cargaHoraria: number;
+  categoria: {id: string, nome: string};
 }
 
-export default function CardCurso({ id, titulo, descricao, cargaHoraria }: CardCurso) {
+export default function CardCurso({ id, titulo, descricao, cargaHoraria, categoria }: CardCurso) {
 
   const navigate = useNavigate();
 
@@ -29,6 +30,9 @@ export default function CardCurso({ id, titulo, descricao, cargaHoraria }: CardC
           </div>
           <div>
             <span>Carga Horária: {cargaHoraria}</span>
+          </div>
+          <div>
+            <span>Categoria: {categoria.nome}</span>
           </div>
         </div>
       </div>
